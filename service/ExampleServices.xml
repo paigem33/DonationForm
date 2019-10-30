@@ -1,0 +1,16 @@
+<services>
+<service verb="create" noun="Person">
+    <in-parameters>
+        <auto-parameters entity-name="mantle.party.Person" include="nonpk"/>
+        <parameter name="firstName" required="true"/>
+        <parameter name="lastName" required="true"/>
+    </in-parameters>
+
+    <out-parameters>
+    </out-parameters>
+
+    <actions>
+        <service-call name="create#mantle.party.Person" out-map="context"/>
+    </actions>
+</service>
+</services>
