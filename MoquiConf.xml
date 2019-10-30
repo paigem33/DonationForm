@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
     <screen-facade>
         <screen location="component://webroot/screen/webroot/apps.xml">
-            <subscreens-item name="DonationForm" menu-title="Donate" menu-index="2" location="component://GND-Donate/screen/GND-Donate.xml" menu-include="Y"/> 
+            <subscreens-item name="DonationForm" menu-title="Donate" menu-index="2" location="component://DonationForm/screen/GND-Donate.xml" menu-include="Y"/> 
         </screen>
     </screen-facade>
 </moqui-conf>
