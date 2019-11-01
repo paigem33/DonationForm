@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+
+    <!-- authz/permission for ALL users -->
+    <moqui.security.ArtifactGroup artifactGroupId="EMPLOYMENT_API" description=""/>
+    <moqui.security.ArtifactGroupMember artifactGroupId="EMPLOYMENT_API" artifactName="component://DonationForm/screen/GND-Donate.xml"
+            artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y"/>
+    <moqui.security.ArtifactAuthz artifactAuthzId="" userGroupId="ALL_USERS" artifactGroupId="EMPLOYMENT_API"
+            authzTypeEnumId="AUTHZT_ALWAYS" authzActionEnumId="AUTHZA_ALL"/>
+
+
+
+    <!-- <moqui.security.ArtifactGroup artifactGroupId="EMPLOYMENT_API"/>
+    <moqui.security.ArtifactAuthz userGroupId="ADMIN" authzActionEnumId="AUTHZA_ALL" artifactGroupId="EMPLOYMENT_API" authzTypeEnumId="AUTHZT_ALLOW"/> -->
+
+    <artifactGroups artifactGroupId="EMPLOYMENT_API">
+        <artifacts artifactName="component://DonationForm/screen/GND-Donate/DonateForm*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
+        <artifacts artifactName="component://DonationForm/screen/GND-Donate/DonateForm.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
+        <artifacts artifactName="component://DonationForm/service/ExampleServices.xml" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N"/>
+    </artifactGroups>
+
+</entity-facade-xml>

@@ -1,4 +1,4 @@
-  <form transition="createPerson" name="Person" method="POST">
+<form name="createPerson">
       <div class="label-and-input">
         <label for="firstName">First Name</label>
         <br/>
@@ -16,5 +16,3 @@
       </div>
       <button type="submit">Create account</button>
   </form>  
-
-  
