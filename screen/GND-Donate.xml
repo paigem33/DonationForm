@@ -3,10 +3,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
     <subscreens default-item="DonateForm"/>
     <widgets>
-        <!-- <render-mode><text type="html" location="component://moqui-org/screen/moqui.org/includes/header.html.ftl" no-boundary-comment="true"/></render-mode> -->
-
         <subscreens-active/>
-
-         <!-- <render-mode><text type="html" location="component://moqui-org/screen/moqui.org/includes/footer.html.ftl"/></render-mode> -->
     </widgets>
 </screen> 
