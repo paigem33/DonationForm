@@ -1,39 +1,18 @@
-<!-- <services>
-<service verb="create" noun="Person">
-    <in-parameters>
-        <auto-parameters entity-name="mantle.party.Person" include="nonpk"/>
-        <parameter name="firstName" required="true"/>
-        <parameter name="middleName" required="true"/>
-        <parameter name="lastName" required="true"/>
-    </in-parameters>
 
-    <out-parameters>
-    </out-parameters>
-
-    <actions>
-        <service-call name="create#mantle.party.Person" out-map="context"/>
-    </actions>
-</service>
-</services> -->
 
 <services>
-    <service verb="create" noun="DemoForm" type="inline" allow-remote="true" authenticate="anonymous-all">
+    <service verb="create" noun="Person" type="inline" authenticate="anonymous-all">
         <in-parameters>
             <parameter name="firstName" required="true"/>
-            <parameter name="middleInitial"/>
-            <parameter name="lastName"/>
+            <parameter name="lastName" required="true"/>
+            <parameter name="emailAddress" required="true"/>
         </in-parameters>
         <out-parameters>
         </out-parameters>
         <actions>
-            <set field="middleName" from="middleInitial"/>
+            <log message="\n\n\n\n${firstName}\n\n\n\n"/>
             <service-call name="mantle.party.PartyServices.create#Person" in-map="context" out-map="context"/>
+            <service-call name="mantle.party.ContactServices.create#EmailAddress" in-map="context" out-map="context"/>
         </actions>
-    </service>
-
-    <service verb="add" noun="nickname" type="java" location="com.mk.moqui.NicknameService" method="makeNickname">
-        <in-parameters>
-            <parameter name="firstName"/>
-        </in-parameters>
     </service>
 </services>
