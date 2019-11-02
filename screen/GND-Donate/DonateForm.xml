@@ -4,10 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
 
-    <transition name="createPerson" require-session-token="false">
+    <transition name="createPerson" require-session-token="false" require-authentication="anonymous-all">
     <log message="******************** Transition hit ********************"/>
         <service-call name="ExampleServices.create#Person" in-map="context" out-map="context"/>
-        <default-response url="../DonationForm"/>
         <default-response url="."/>
     </transition>
 
