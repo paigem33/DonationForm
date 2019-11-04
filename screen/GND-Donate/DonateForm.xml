@@ -4,18 +4,42 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
 
-    <transition name="createPerson">
-    <log message="\n\n\n Transition hit \n\n\n"/>
-        <service-call name="ExampleServices.create#Person"/>
+    <transition name="createPerson" require-session-token="false" method="post">
+    <service-call name="ExampleServices.create#Person" in-map="context" out-map="context"/>
+        <actions>
+        </actions>
         <default-response url="."/>
     </transition>
 
-    <actions>
-    </actions>
+    <!-- <transition name="json" method="options" require-session-token="false">
+        <default-response type="none" />
+    </transition> -->
 
     <widgets>
+    <!-- <form-single name="createPerson" transition="createPerson" method="POST">
+    <field name="firstName">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="lastName">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="emailAddress">
+                <default-field>
+                    <text-line size="30"/>
+                </default-field>
+            </field>
+            <field name="submitButton">
+                <default-field title="Submit">
+                    <submit/>
+                </default-field>
+            </field>
+            </form-single> -->
          <render-mode>
             <text type="html,vuet" location="component://DonationForm/template/DonateForm.html.ftl"/>
         </render-mode>
     </widgets>
-</screen>
+</screen> 
