@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<screen require-authentication="false"
+<screen require-authentication="anonymous-all"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
 
-    <transition name="createPerson" require-session-token="false" require-authentication="anonymous-all">
-    <log message="******************** Transition hit ********************"/>
-        <service-call name="ExampleServices.create#Person" in-map="context" out-map="context"/>
+    <transition name="createPerson" require-session-token="false" method="post">
+    <service-call name="ExampleServices.create#Person" in-map="context" out-map="context"/>
+        <actions>
+        </actions>
         <default-response url="."/>
     </transition>
 
-    <actions>
-    </actions>
+    <!-- <transition name="json" method="options" require-session-token="false">
+        <default-response type="none" />
+    </transition> -->
 
     <widgets>
     <!-- <form-single name="createPerson" transition="createPerson" method="POST">
