@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<services>
 
     <service verb="create" noun="Person" authenticate="anonymous-all">
         <in-parameters>
             <parameter name="firstName" required="true"/>
+            <parameter name="middleName"/>
             <parameter name="lastName" required="true"/>
             <parameter name="emailAddress" required="true">
                 <text-email message="Please enter a valid email"/>
             </parameter>
+            <parameter name="telecomNumber" required="true"/>
+            <parameter name="address1" required="true"/>
+            <parameter name="postalCode" required="true"/>
+            <parameter name="city" required="true"/>
+            <parameter name="stateProvinceGeoId" required="true"/>
         </in-parameters>
 
         <out-parameters>
@@ -19,6 +25,10 @@
             <service-call name="mantle.party.PartyServices.create#Person" in-map="context" out-map="context"/>
             <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="context" out-map="context"/>
             <!-- <service-call name="mantle.party.ContactServices.create#EmailAddress" in-map="context" out-map="context"/> -->
+            <script>
+                println "-------------------create user account-------------------------"
+                println context
+            </script>
         </actions>
     </service>
 </services> 
