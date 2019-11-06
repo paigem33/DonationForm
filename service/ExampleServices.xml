@@ -3,32 +3,40 @@
 
     <service verb="create" noun="Person" authenticate="anonymous-all">
         <in-parameters>
+            <!-- Create person -->
             <parameter name="firstName" required="true"/>
             <parameter name="middleName"/>
             <parameter name="lastName" required="true"/>
+            <!-- Create contact services -->
             <parameter name="emailAddress" required="true">
                 <text-email message="Please enter a valid email"/>
             </parameter>
-            <parameter name="telecomNumber" required="true"/>
+            <parameter name="contactNumber" required="true"/>
             <parameter name="address1" required="true"/>
+            <parameter name="unitNumber"/>
             <parameter name="postalCode" required="true"/>
             <parameter name="city" required="true"/>
             <parameter name="stateProvinceGeoId" required="true"/>
+            <!-- Create credit card -->
+            <parameter name="cardNumber" required="true"/>
+            <parameter name="expireDate" required="true"/>
+            <parameter name="cardSecurityCode" required="true"/>
         </in-parameters>
 
         <out-parameters>
+            <parameter name="partyId"/>
         </out-parameters>
 
         <actions>
-            <log message="******************** TEST ********************"/>
-            <log message="********************${context}********************"/>
             <service-call name="mantle.party.PartyServices.create#Person" in-map="context" out-map="context"/>
             <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="context" out-map="context"/>
-            <!-- <service-call name="mantle.party.ContactServices.create#EmailAddress" in-map="context" out-map="context"/> -->
+            <service-call name="mantle.account.PaymentMethodServices.create#CreditCard" in-map="context" out-map="context"/>
             <script>
                 println "-------------------create user account-------------------------"
                 println context
             </script>
         </actions>
     </service>
+
+    
 </services> 
