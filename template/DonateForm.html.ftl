@@ -106,14 +106,23 @@
 
   <#--  Card Info  -->
 
+  <label for="amount">Amount*</label>
+  <input required type="text" id="amount" name="amount">
+
   <label for="cardNumber">Card Number*</label>
   <input required type="text" id="cardNumber" name="cardNumber">
 
   <label for="expireDate">Expiration Date*</label>
-  <input required type="text" id="ciexpireDatety" name="expireDate">
+  <input required type="text" id="expireDate" name="expireDate">
 
   <label for="cardSecurityCode">Security Code*</label>
   <input required type="text" id="cardSecurityCode" name="cardSecurityCode">
+
+  <#--  <label for="paymentGatewayConfigId">Gateway</label>
+    <select required id="paymentGatewayConfigId"  name="paymentGatewayConfigId">
+      <option class="blank label"></option>
+      <option value="${paymentGatewayConfigId}">${description}</option>
+    </select>  -->
   
   <button type="submit">Create account</button>
   </form> 
