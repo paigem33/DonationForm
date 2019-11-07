@@ -3,4 +3,5 @@
         name="DonationForm" version="1.3.0">
         <depends-on name="mantle-udm" version="2.0.0"/>
         <depends-on name="mantle-usl" version="2.0.0"/>
+        <depends-on name="mantle-stripe"/>
 </component>
