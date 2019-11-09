@@ -22,7 +22,7 @@
   <#--  Contact info  -->
   
   <label for="emailAddress">Email*</label>
-  <input required type="email" id="emailAddress" name="emailAddress">
+  <input required type="email" id="emailAddress" name="emailAddress">
 
   <label for="contactNumber">Phone Number*</label>
   <input required type="tel" id="contactNumber" name="contactNumber">
@@ -31,7 +31,7 @@
   <input required type="text" id="address1" name="address1">
 
   <label for="unitNumber">Apt #</label>
-  <input required type="text" id="unitNumber" name="unitNumber">
+  <input type="text" id="unitNumber" name="unitNumber">
 
   <label for="postalCode">Zip Code*</label>
   <input required type="text" id="postalCode" name="postalCode">
@@ -112,6 +112,12 @@
   <label for="cardNumber">Card Number*</label>
   <input required type="text" id="cardNumber" name="cardNumber">
 
+  <label for="expireMonth">Expire Month*</label>
+  <input required type="text" id="expireMonth" name="expireMonth">
+
+  <label for="expireYear">Expire Year*</label>
+  <input required type="text" id="expireYear" name="expireYear">
+
   <label for="expireDate">Expiration Date*</label>
   <input required type="text" id="expireDate" name="expireDate">
 
@@ -121,7 +127,7 @@
   <#--  <label for="paymentGatewayConfigId">Gateway</label>
     <select required id="paymentGatewayConfigId"  name="paymentGatewayConfigId">
       <option class="blank label"></option>
-      <option value="${paymentGatewayConfigId}">${description}</option>
+      <option value="StripeDemo">Secret key</option>
     </select>  -->
   
   <button type="submit">Create account</button>

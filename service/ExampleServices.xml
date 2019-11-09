@@ -25,19 +25,23 @@
             <parameter name="amount" required="true"/>
             <parameter name="cardNumber" required="true"/>
             <parameter name="expireDate" required="true"/>
+            <parameter name="expireMonth" required="true"/>
+            <parameter name="expireYear" required="true"/>
             <parameter name="cardSecurityCode" required="true"/>
             <!-- For stripe: value of secret test key -->
-            <parameter name="paymentGatewayConfigId"/>
+            <!-- <parameter name="paymentGatewayConfigId"/> -->
         </in-parameters>
 
         <out-parameters>
             <parameter name="partyId"/>
+            <parameter name="paymentMethodId"/>
             <!-- Store person? -->
             <!-- <parameter name="contactMechId"/>
             <parameter name="contactMechPurposeId"/> -->
         </out-parameters>
 
         <actions>
+        <!-- in-map="[partyId:partyId] + context"? -->
             <service-call name="mantle.party.PartyServices.create#Person" in-map="context" out-map="context"/>
             <!-- <service-call name="mantle.party.ContactServices.store#PartyContactMech" in-map="context" out-map="context"/> -->
             <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="context" out-map="context"/>
@@ -48,11 +52,22 @@
             <!-- create payment -->
             <!-- This is telling it to set the fromPartId value to the partyId value, instead of taking in a value from the form you are able to do it this way -->
             <set field="fromPartyId" from="partyId"/>
-            <set field="toPartyId" default-value="testing"/>
+            <set field="toPartyId" default-value="UPS"/>
             <service-call name="mantle.account.PaymentServices.create#Payment" in-map="context" out-map="context"/>
+            <!-- Change format for date -->
+            <set field="expireDate" from="expireMonth + '/' + expireYear"/>
             <!-- Stripe service -->
-            <service-call name="Stripe.StripePaymentServices.authorize#Payment" in-map="context" out-map="context"/>
-            <service-call name="Stripe.StripePaymentServices.capture#Payment" in-map="context" out-map="context"/>
+            <!-- <entity-make-value entity-name="mantle.account.payment.Payment" value-field="payment"/> -->
+            <log message="-------------------context: ${context}--------------------------"/>
+            <log message="-------------------paymentMethodId: ${paymentMethodId}--------------------------"/>
+            <log message="-------------------paymentId: ${paymentId}--------------------------"/>
+            <set field="paymentGatewayConfigId" value="StripeDemo"/>
+            <log message="-------------------paymentGatewayConfigId: ${paymentGatewayConfigId}--------------------------"/>
+            <log message="-------------------stripeGatewayInfoMap: ${stripeGatewayInfoMap}--------------------------"/>
+            <set field="paymentGatewayTypeEnumId" value="PgtTest"/>
+            <log message="-------------------paymentGatewayTypeEnumId: ${paymentGatewayTypeEnumId}--------------------------"/>
+            <service-call name="Stripe.StripePaymentServices.authorizeAndCapture#Payment" in-map="context" out-map="context"/>
+            <!-- <service-call name="Stripe.StripePaymentServices.capture#Payment" in-map="context" out-map="context"/> -->
             <script>
                 println "-------------------create user account-------------------------"
                 println context
