@@ -22,10 +22,10 @@
   <#--  Contact info  -->
   
   <label for="emailAddress">Email*</label>
-  <input required type="email" id="emailAddress" name="emailAddress">
+  <input required type="email" id="emailAddress" name="emailAddress" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="example@email.com">
 
   <label for="contactNumber">Phone Number*</label>
-  <input required type="tel" id="contactNumber" name="contactNumber">
+  <input required type="tel" id="contactNumber" name="contactNumber" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" title="123-345-67890">
 
   <label for="address1">Residential Address*</label>
   <input required type="text" id="address1" name="address1">
@@ -34,7 +34,7 @@
   <input type="text" id="unitNumber" name="unitNumber">
 
   <label for="postalCode">Zip Code*</label>
-  <input required type="text" id="postalCode" name="postalCode">
+  <input required type="text" id="postalCode" name="postalCode" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="12345 or 12345-1234">
 
   <label for="city">City*</label>
   <input required type="text" id="city" name="city">
@@ -107,22 +107,22 @@
   <#--  Card Info  -->
 
   <label for="amount">Amount*</label>
-  <input required type="text" id="amount" name="amount">
+  <input required type="text" id="amount" name="amount" pattern="^(\d*\.)?\d+$" title="50.00">
 
   <label for="cardNumber">Card Number*</label>
-  <input required type="text" id="cardNumber" name="cardNumber">
+  <input required type="text" id="cardNumber" name="cardNumber" pattern="4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11}" title="16 digit card number, no separators">
 
   <label for="expireMonth">Expire Month*</label>
-  <input required type="text" id="expireMonth" name="expireMonth">
+  <input required type="text" id="expireMonth" name="expireMonth" pattern="^(0[1-9]|1[012])$" title="Two digit month">
 
   <label for="expireYear">Expire Year*</label>
-  <input required type="text" id="expireYear" name="expireYear">
+  <input required type="text" id="expireYear" name="expireYear" pattern="^[0-9]{4}$" title="Four digit year">
 
   <label for="expireDate">Expiration Date*</label>
-  <input required type="text" id="expireDate" name="expireDate">
+  <input required type="text" id="expireDate" name="expireDate" pattern="^^(0[1-9]|1[0-2])(19|2[0-1])\d{2}$" title="mmyyyy - no  separators">
 
   <label for="cardSecurityCode">Security Code*</label>
-  <input required type="text" id="cardSecurityCode" name="cardSecurityCode">
+  <input required type="text" id="cardSecurityCode" name="cardSecurityCode" pattern="^[0-9]{3}$" title="Three digit code">
 
   <#--  <label for="paymentGatewayConfigId">Gateway</label>
     <select required id="paymentGatewayConfigId"  name="paymentGatewayConfigId">
