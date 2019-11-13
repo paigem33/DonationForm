@@ -119,7 +119,7 @@
   <input required type="text" id="expireYear" name="expireYear" pattern="^[0-9]{4}$" title="Four digit year">
 
   <label for="expireDate">Expiration Date*</label>
-  <input required type="text" id="expireDate" name="expireDate" pattern="^^(0[1-9]|1[0-2])(19|2[0-1])\d{2}$" title="mmyyyy - no  separators">
+  <input required type="text" id="expireDate" name="expireDate">
 
   <label for="cardSecurityCode">Security Code*</label>
   <input required type="text" id="cardSecurityCode" name="cardSecurityCode" pattern="^[0-9]{3}$" title="Three digit code">

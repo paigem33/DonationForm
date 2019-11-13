@@ -55,17 +55,20 @@
             <set field="toPartyId" default-value="UPS"/>
             <service-call name="mantle.account.PaymentServices.create#Payment" in-map="context" out-map="context"/>
             <!-- Change format for date -->
-            <set field="expireDate" from="expireMonth + '/' + expireYear"/>
+            <!-- <set field="expireDate" from="expireMonth + '/' + expireYear"/> -->
             <!-- Stripe service -->
-            <!-- <entity-make-value entity-name="mantle.account.payment.Payment" value-field="payment"/> -->
             <log message="-------------------context: ${context}--------------------------"/>
             <log message="-------------------paymentMethodId: ${paymentMethodId}--------------------------"/>
             <log message="-------------------paymentId: ${paymentId}--------------------------"/>
             <set field="paymentGatewayConfigId" value="StripeDemo"/>
             <log message="-------------------paymentGatewayConfigId: ${paymentGatewayConfigId}--------------------------"/>
             <log message="-------------------stripeGatewayInfoMap: ${stripeGatewayInfoMap}--------------------------"/>
-            <set field="paymentGatewayTypeEnumId" value="PgtTest"/>
+            <!-- <set field="paymentGatewayTypeEnumId" value="PgtStripe"/> -->
             <log message="-------------------paymentGatewayTypeEnumId: ${paymentGatewayTypeEnumId}--------------------------"/>
+            <entity-make-value entity-name="mantle.account.payment.Payment" value-field="payment"/>
+            <!-- <set field="paymentId" from="payment.paymentId"/> -->
+            <log message="-------------------paymentId: ${paymentId}--------------------------"/>
+            <log message="-------------------context: ${context}--------------------------"/>
             <service-call name="Stripe.StripePaymentServices.authorizeAndCapture#Payment" in-map="context" out-map="context"/>
             <!-- <service-call name="Stripe.StripePaymentServices.capture#Payment" in-map="context" out-map="context"/> -->
             <script>
