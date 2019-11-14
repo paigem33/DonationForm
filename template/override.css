@@ -1,0 +1,835 @@
+p { word-wrap: normal; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; -o-hyphens: none; hyphens: none; }
+h3 { margin-top: 20px; }
+.basic_html p { margin-top: 0.4em; margin-bottom: 0.4em; }
+.basic_html li { margin-left: 20px; }
+.basic_html th, .basic_html td { padding: 2px 8px; border: #DDDDDF solid thin; }
+
+.presentation { height: 108px; background: #212c43; }
+.main-nav { height: 73px; background: #212c43; /* opacity: 0.95; filter: alpha(opacity=95); */ }
+.top-info { height: 35px; border-top: black solid 1px; }
+.logo { padding-top: 16px; }
+.logo-img { margin-bottom: 20px; }
+ul#navigation > li > a { padding: 23px 15px 21px; }
+ul#navigation a:hover, ul#navigation .active-item > a { color: #60cbd7; }
+#navigation { padding-top: 5px; }
+
+@media (min-width: 768px) { ul#navigation > li:hover > ul { top: 70px; background: rgba(33, 44, 67, 0.9); } }
+#navigation-toggle { margin-top: 8px; }
+
+.home-title-wrapper {
+  background: url(/images/home-photo.jpg) repeat-x center 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.home-title-wrapper .page-title-secondary { text-shadow: none; }
+.home-title-wrapper .page-title-secondary span { display: inline-block; padding: 4px 12px 6px 12px; background: rgba(33, 44, 67, 0.1); border-radius: 8px; }
+/* use color instead of placeholder image for framework, mantle, etc */
+.services-title-wrapper { background-image: none; background-color: #437ac3; }
+.icon-circle--small { padding-top: 2px; }
+.circle-info .icon-circle--small { padding-left: 2px; }
+.list__item .icon-circle { padding-left: 2px; }
+
+.divider-circle-light { margin-top: 29px; }
+.divider-circle--light { margin-top: 29px; }
+
+/* better handle moqui logo image */
+.moqui-logo { margin-top: 0px; height: 40px; }
+@media (min-width: 768px) {
+  /* TODO: figure out the needed height at smaller screens, adjust this height value accordingly + add media query correcting it at larger screens  */
+  .presentation { height: 41px; background: #212c43; }
+  /* .main-nav.fixed-pos { top: 0px; } */
+  .top-info { margin-top: 73px; }
+  .circle-info__title { font-size: 26px; }
+  .circle-button__title { font-size: 26px; }
+}
+
+.promobox { background-image: none; }
+.promobox-position-short { position: relative; z-index: 100; margin-top: -30px; margin-bottom: -10px; }
+
+.btn-wide { padding: 7px 20px 7px 20px; font-size: 24px; }
+.promobox .btn-wide { float: right; padding: 7px 20px 7px 20px; margin-top: 0; margin-left: 8px; }
+.promobox .promobox-img { float: right; margin-top: 8px; margin-left: 8px; }
+.promobox__text.promobox-wide { max-width: 100%; }
+
+.row.link-bar { text-align: center; font-size: 24px; }
+
+.section-title { margin-top: 20px; margin-bottom: 41px; font-size: 25px; line-height: 38px; }
+.section-title .text-highlight { font-size: 50px; }
+.section-title-simple { font-size: 30px; line-height: 30px; }
+.section-title--smaller { margin-top: 20px; margin-bottom: 20px; font-size: 20px; line-height: 26px; }
+.section-title--smaller .text-highlight { font-size: 35px; }
+
+.services .service__description { padding-top: 20px; font-size: 14px; line-height: 18px; }
+
+.services-description .service__text { font-size: 12px; line-height: 16px; }
+.services-description .services__item.small { min-height: 110px; padding: 15px 15px; margin: 12px 0 0;
+  background: #e3e8ec; border: 4px solid #f1f3f5; }
+.services-description .small .icon-circle { float: left; margin-top: 4px; margin-right: 16px; margin-bottom: 10px;
+  width: 50px; height: 50px; border: 2px solid #212c43; font-size: 24px; padding-top: 11px; }
+.services-description .small .service__title { margin-top: 0; margin-bottom: 4px; font-size: 18px; line-height: 18px; }
+
+.accordion-wide { max-width: 100%; }
+
+.logo_gallery div { display: flex; align-items: center; justify-content: center; height: 90px; text-align: center; }
+.logo_gallery img { max-height: 90px; max-width: 150px; }
+.logo_gallery a { font-size: 20px; }
+
+/* fix code:brush syntaxhighlighter line numbers */
+.syntaxhighlighter { white-space: normal; background: white; }
+
+.Login .form-signin { display: block; width: 400px; padding: 10px; margin: 0 auto; border-radius: 3px; }
+.Login .form-signin input { width: 100%; height: auto; font-size: 1.2em; }
+.Login .form-signin input.top { margin-bottom: -1px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.Login .form-signin input.middle { margin-bottom: -1px; border-radius: 0; }
+.Login .form-signin input.bottom { border-top-left-radius: 0; border-top-right-radius: 0; margin-bottom: 10px; }
+
+/* wiki screen, including CodeMirror class */
+#wiki-page-area { width: 100%; overflow-x: scroll; overflow-y: visible; }
+#wiki-page-area th, #wiki-page-area td { padding: 2px 4px 2px 4px; border: thin solid lightgrey; }
+.CodeMirror, .CodeMirror-scroll { min-height: 600px; min-width: 800px; }
+pre { background: inherit; }
+
+.form-control { display: inline; min-width: 20px; width: auto; max-width: 100%; }
+.table-condensed .form-group { margin-bottom: 0; }
+
+nav.form-list-nav .pagination { margin: 6px 6px 0 6px; padding:0; border:0; }
+nav.form-list-nav>form.form-inline { display: inline-block; margin: 2px 6px 0 0; float: left; }
+nav.form-list-nav>.btn { display: inline-block; margin: 6px 6px 0 6px; float: left; }
+nav.form-list-nav>span.select2-container { float: left; margin: 6px 0 6px 0; min-width: 100px; max-width: 160px; }
+
+/* move id based anchor target up for fixed header */
+h1:target, h2:target, h3:target { display: inline-block; padding-top: 108px; margin-top: -60px; }
+/* fix default nowrap in jstree */
+.jstree-default .jstree-anchor { white-space: normal; height: auto; }
+
+/* --- Style changes --- */
+/* TODO: fix font styles, get font being used on GND */
+/* TODO: fix spacing of li in main-nav - currently over lapping logo at vertical tablet size */
+
+body {
+  margin:auto;
+}
+
+/* HEADER */
+
+/* Logo */
+
+.logo-img {
+  padding: 0;
+  margin: 0;
+  height: 48px;
+  width: 48px;
+}
+.logo {
+  position: absolute;
+  left: 15px;
+  top: -11px
+}
+
+/* End logo */
+
+/* Mobile Menu styles */
+
+ul#navigation {
+  width: 100%;
+  top: 58px;
+  background-color: #ebebeb;
+  box-shadow: 0 3px 6px #e5e5e5;
+  padding: 0 0 0 32px;
+}
+ul#navigation li, ul#navigation li:last-of-type{
+  border-bottom: 1px solid #acacac;
+  padding: 0;
+}
+ul#navigation > li > a {
+  color: #0a2f6c;
+  padding: 14px 0;
+}
+#navigation-toggle {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: 0;
+  position: relative;
+  top: -5px;
+}
+#navigation-toggle i {
+  font-size: 50px;
+  color: #0a2f6c;
+  margin-right: 130px;
+}
+#navigation-toggle.open-menu {
+  background: transparent;
+  border: none;
+}
+#navigation > ul.onMobile {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ebebeb;
+  margin: 10px 0 8px;
+  padding-right: 32px;
+}
+#navigation > ul.onMobile > li {
+  border-bottom: none;
+}
+#navigation > ul.onMobile a:hover {
+  color: #0a2f6c;
+}
+#navigation > ul.onMobile > li a {
+  font-size: 35px;
+  padding: 0;
+}
+
+
+/* End mobile menu styles */
+
+/* Top nav */
+.top-info {
+  margin-top: 0;
+  position: fixed;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #0c306c;
+  height: 29px;
+}
+.top-info a {
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+  margin-right: 5%;
+}
+.top-info a:last-of-type {
+  margin-right: 1em;
+}
+.top-info a span {
+  font-size: 14px;
+  color: #fff;
+}
+.top-info a span:hover {
+  text-decoration: underline;
+}
+.top-info i {
+  color: #fff;
+}
+.fa-envelope{
+  margin-left: 5px;
+}
+.top-info .container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+/* end top nav */
+
+/* main nav */
+
+.presentation{
+  height: 86px;
+}
+.main-nav .container {
+  width: 100%;
+}
+.main-nav.fixed-pos { 
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 29px; 
+  height: 58px;
+  background-color: #fff;
+}
+ul#navigation a {
+  color: #0a2f6c;
+  font-size: 18px;
+}
+ul#navigation  > li > a:hover {
+  color: #60cbd7;
+  background-color: transparent;
+}
+ul#navigation > li:hover {
+  padding-bottom: 0;
+}
+ul#navigation > li::after {
+  display: none;
+}
+.donateBtn {
+  background-color: #f6914a;
+  text-transform: uppercase;
+  text-align: center;
+  width: 116px;
+  height: 58px;
+  color: #fff;
+  font-size: 18px;
+  padding-top: 17px;
+  position: absolute;
+  right: 0;
+}
+.donateBtn:hover {
+  background-color: #ffdaa6;
+  color: #f6914a;
+}
+
+/* end main nav */
+
+/* Secondary header */
+
+.header-2 .main-nav{
+  top: 0;
+}
+.header-2 .secure-section {
+  position: absolute;
+  right:10px;
+  top: 8px;
+  display: flex;
+}
+.header-2 .secure-section i {
+  font-size: 40px;
+  display: block;
+}
+.header-2 .secure-section span {
+ display: block;
+ color: #98a0b6;
+ text-transform: uppercase;
+ font-size: 16px;
+ padding-left: 5px;
+}
+
+/* End secondary header */
+
+/* END HEADER */
+
+/* footer */
+.footer {
+  padding: 20px 10px;
+  max-width: 1050px;
+  margin: 0 2%;
+}
+.footer p {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.footer p:last-of-type {
+  margin-bottom: 10px;
+}
+.footer form {
+  display: flex;
+  margin-bottom: 20px;
+}
+.footer form input {
+  width: 55%;
+  border: 1px solid #acacac;
+  color: #acacac;
+  border-right: 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 11px;
+}
+.footer form input::placeholder {
+  color: #acacac;
+  opacity: 1;
+}
+.footer form input:focus {
+  border: solid 1px #7e9ab6;
+}
+.footer form button {
+  width: 45%;
+  background-color: #0076a2;
+  border: none;
+  color: #fff;
+  line-height: 30px;
+  text-transform: uppercase;
+  padding: 0 3%;
+  font-size: 11px;
+  height: 30px;
+}
+.footer form button:hover {
+  color: #0076a2;
+  background-color: #ebebeb;
+}
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.footer-nav ul li {
+  width: 25%;
+  padding-bottom: 16px;
+}
+.footer-nav ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.footer-nav ul li a {
+  color: black;
+}
+.footer-icons {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.5rem;
+}
+.footer-icons .donateBtn {
+  position: static;
+  padding: 11px 19px;
+}
+.footer-icons i {
+  font-size: 35px;
+  color: #0a2f6c;
+}
+.footerSecondary {
+  background: #959595;
+  color: white;
+  font-size: 12px;
+  padding: 35px 5px;
+}
+.footerSecondary p {
+  margin: auto;
+  max-width: 480px;
+}
+
+
+/* end footer */
+
+/* Body */
+.big-buttons {
+  max-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.big-buttons a {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  border: 1px solid white;
+  color: white;
+  text-shadow: 0px 0px 2px black;
+  display: block;
+  font-size: 20px;
+  height: 50px;
+  margin: 0 auto 35px auto;
+  opacity: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  min-width: 200px;
+  width: 90%;
+  max-width: 320px;
+}
+.big-buttons a span {
+  display: inline-block;
+  margin-top: 12px;
+  text-align: center;
+  width: 100%;
+}
+.tile-background {
+  background: url("../images/components/index/gnd-tile.jpg");
+  background-color: #2ac6df;
+  background-position: center 320px;
+  background-repeat: repeat-y;
+  background-size: contain;
+  margin: auto;
+  padding: 36px 0 28px;
+}
+.lotus-background {
+  width: 100%;
+  background-image: url("../images/components/index/lotus1200x533.png");
+  background-position: center 320px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.nobreak {
+  white-space: no-wrap;
+}
+.see-through-background {
+  background-color: rgba(0,0,0,.55);
+  border-radius: 8px;
+  padding: 10px 9px;
+  margin: 0 2% 29px;
+  color: #fcf4c9;
+  max-width: 1050px;
+}
+.see-through-background p {
+  line-height: 29px;
+  font-size: 16px;
+}
+h1.module-header {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 16px;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.attend-service p {
+  margin: auto;
+  max-width: 296px;
+}
+.attend-service > p, .our-practice p {
+  text-align: center;
+}
+.attend-service img {
+  display: block;
+  margin: 0 auto 5px;
+  max-width: 296px;
+  width: 100%;
+}
+.attend-service ol, .our-practice ol {
+  list-style-type: none;
+}
+.attend-service .step {
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+.our-practice .practice {
+  margin: 15px 0;
+}
+.our-practice img {
+  max-width: 296px;
+  display: block;
+  margin: auto;
+}
+.group-text {
+  margin-top: 6px;
+}
+.our-practice p {
+  line-height: 29px;
+  margin: 0 0 5px 0;
+}
+.our-practice .practices-title {
+  font-size: 25px;
+}
+.our-practice .practices-description {
+  font-size: 17px;
+}
+.see-through-background a.button {
+  background: #0076a2;
+  color: white;
+  display: block;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 14px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 140px;
+}
+.welcome-to-gnd p, .start-serving p, .history p {
+  margin: 16px 0;
+}
+  
+
+/* End body */
+
+/* Donation form css */
+
+main.donation {
+  max-width: 1000px;
+  margin: 5px auto 0;
+  padding: 0 10px;
+}
+.donation .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.donation .col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.donation fieldset {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #dadada;
+  font-family: 'Roboto';
+  margin: 0 0 1.5em 0;
+  padding: 1em 10% 1em 10%;
+  position: relative;
+}
+.donation fieldset legend {
+  border-bottom: 1px solid #dadada;
+  color: #6a7897;
+  float: left;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0 0 0.5em 0;
+  padding: 0 2em 0 0;
+  text-transform: uppercase;
+}
+.donation .amount {
+  padding-bottom: 30px;
+  color: #0a2f6c;
+}
+.donation fieldset.amount div.amount-radios {
+  /* clear: both;
+  padding: 15px; */
+}
+.donation fieldset.amount .radio {
+  padding-left: 0;
+  margin: 16px 0;
+}
+.donation fieldset.amount .radio input {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+.donation fieldset.amount input:checked + label {
+  background-color: #15769f;
+  color: white;
+}
+.donation fieldset.amount label {
+  border-radius: 6px;
+  border: 2px solid #6a7897;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  min-width: 60px;
+  padding: 15px 0;
+  text-align: center;
+  text-shadow: none;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+}
+.donation fieldset.amount .other-amount-wrapper {
+  position: relative;
+  height: 60px;
+  padding: 0 1rem 0 0;
+  max-width: 25%;
+}
+/* End donation form css */
+
+/* --- Media queries --- */
+
+@media screen and (min-width: 768px){
+
+  /* Hide .onMobile at larger screens */
+  .top-info > div > a.onMobile, ul#navigation > ul.onMobile {
+    display: none;
+  }
+
+  /* logo */
+
+  .logo {
+    top: -41px;
+    left: 5px;
+  }
+  .logo-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 36px;
+    border: 5px solid white;
+    background: white;
+  }
+
+  /* end logo */
+
+  /* top nav */
+
+  .top-info {
+    height: 41px;
+  }
+  /* TODO: fix spacing on top nav at large screens  */
+  .top-info .container {
+    /* max-width: 1063px; */
+  }
+  .top-info a {
+    padding-top: 7px;
+    align-items: flex-start;
+  }
+  .top-info a span {
+    font-size: 18px;
+  }
+  .top-info i {
+    font-size: 24px;
+  }
+  .main-nav.fixed-pos {
+    top: 41px;
+    height: 61px;
+  }
+
+  /* end top nav */
+
+  /* main nav */
+
+  .main-nav .container {
+    max-width: 1063px;
+  }
+  nav.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+  ul#navigation {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 57px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  ul#navigation li, ul#navigation li:last-of-type {
+    border-bottom: none;
+  }
+  #navigation-box {
+    /* TODO: fix placement of li's as the screen gets larger - maybe with percent widths? */
+    position: absolute;
+    right: 0;
+  }
+  ul#navigation > li > a {
+    padding: 22px 15px;
+  }
+  .donateBtn {
+    height: 61px;
+    padding-top: 19px;
+  }
+  /* end main nav */
+
+  /* Secondary header */
+
+  .header-2 .main-nav  {
+    top: 0;
+    height: 75px;
+  }
+  .header-2 .logo {
+    top: -9px;
+  }
+  .header-2 .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+  .header-2 .secure-section {
+    top: 16px;
+  }
+
+  /* End secondary header */
+
+  /* Footer */
+
+  
+  .footer div {
+    display: flex;
+  }
+  .footer div form, .footer-nav {
+    width: 50%;
+  }
+  .footer div form {
+    margin: 0 30px 0 0;
+  }
+  .footer-icons {
+    max-width: 50%;
+  }
+  .footer p:last-of-type {
+    padding-bottom: 25px;
+  }
+
+  /* End footer */
+
+  /* Body */
+
+  .big-buttons {
+    display: flex;
+    justify-content: center;
+    z-index: 11;
+    max-width: none;
+    left: 50%;
+    top: 70%;
+    width: 80%;
+  }
+  .big-buttons a {
+    max-width: 30%;
+  }
+  .big-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.65);
+    color: #666;
+    text-shadow: none;
+  }
+  .tile-background {
+    padding-top:51px;
+  }
+  .see-through-background {
+    padding: 10px 40px;
+    margin-bottom: 63px;
+  }
+  h1.module-header {
+    font-size: 48px;
+  }
+  .video {
+    padding: 0 20% 19px;
+  }
+  .attend-service > p {
+    max-width: none;
+  }
+  .attend-service ol {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .attend-service li {
+    width: 50%;
+  }
+  .attend-service li:nth-child(even){
+    margin-top: 80px;
+  }
+  .our-practice .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .our-practice .practice {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .our-practice img {
+    max-width: 200px;
+  }
+  .start-serving {
+    padding-bottom: 32px;
+  }
+  .start-serving p {
+    text-align: center;
+  }
+  .desktop-break {
+    display: block;
+  }
+
+  /* end Body */
+
+
+}
+
+@media screen and (min-width:1050px){
+  .see-through-background {
+    margin: 0 auto 63px;
+  }
+  .footer {
+    margin: auto;
+  }
+}
+
+ 
+/* End media queries */
+
+/* End Style changes */
