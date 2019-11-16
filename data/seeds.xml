@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <artifactGroups artifactGroupId="DonationForm">
+<entity-facade-xml type="seed">
+
+    <artifactGroups artifactGroupId="DonationFormApp">
         <artifacts artifactName="component://DonationForm/screen/GND-Donate/DonateForm*" artifactTypeEnumId="AT_XML_SCREEN_TRANS" inheritAuthz="Y" nameIsPattern="Y"/>
         <artifacts artifactName="component://DonationForm/screen/GND-Donate/DonateForm.xml" artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N"/>
         <artifacts artifactName="component://DonationForm/service/ExampleServices.xml" artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N"/>
     </artifactGroups>
+
   <moqui.security.ArtifactAuthz 
     artifactAuthzId="DonationForm_AuthAll"
     userGroupId="ALL_USERS" 
-    artifactGroupId="DonationForm"
+    artifactGroupId="DonationFormApp"
     authzTypeEnumId="AUTHZT_ALWAYS"
     authzActionEnumId="AUTHZA_ALL" 
     />
+
 </entity-facade-xml>
