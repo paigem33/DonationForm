@@ -7,14 +7,7 @@
             <parameter name="firstName" required="true"/>
             <parameter name="middleName"/>
             <parameter name="lastName" required="true"/>
-            <!-- Store person? -->
-            <!-- <parameter name="partyId"/>
-            <parameter name="contactMechId"/>
-            <parameter name="contactMechPurposeId"/> -->
-            <!-- Create contact services -->
-            <parameter name="emailAddress" required="true">
-                <text-email message="Please enter a valid email"/>
-            </parameter>
+            <parameter name="emailAddress" required="true"/>
             <parameter name="contactNumber" required="true"/>
             <parameter name="address1" required="true"/>
             <parameter name="unitNumber"/>
@@ -24,26 +17,19 @@
             <!-- Create credit card -->
             <parameter name="amount" required="true"/>
             <parameter name="cardNumber" required="true"/>
-            <parameter name="expireDate" required="true"/>
             <parameter name="expireMonth" required="true"/>
             <parameter name="expireYear" required="true"/>
             <parameter name="cardSecurityCode" required="true"/>
-            <!-- For stripe: value of secret test key -->
-            <!-- <parameter name="paymentGatewayConfigId"/> -->
         </in-parameters>
 
         <out-parameters>
-            <parameter name="partyId"/>
-            <parameter name="paymentMethodId"/>
-            <!-- Store person? -->
-            <!-- <parameter name="contactMechId"/>
-            <parameter name="contactMechPurposeId"/> -->
         </out-parameters>
 
         <actions>
-        <!-- in-map="[partyId:partyId] + context"? -->
+            <!-- Change format for date -->
+            <set field="expireDate" from="expireMonth + '/' + expireYear"/>
+            <!-- Create person/contact -->
             <service-call name="mantle.party.PartyServices.create#Person" in-map="context" out-map="context"/>
-            <!-- <service-call name="mantle.party.ContactServices.store#PartyContactMech" in-map="context" out-map="context"/> -->
             <service-call name="mantle.party.ContactServices.store#PartyContactInfo" in-map="context" out-map="context"/>
             <!-- create credit card -->
             <set field="firstNameOnAccount" from="firstName"/>
@@ -54,20 +40,10 @@
             <set field="fromPartyId" from="partyId"/>
             <set field="toPartyId" default-value="UPS"/>
             <service-call name="mantle.account.PaymentServices.create#Payment" in-map="context" out-map="context"/>
-            <!-- Change format for date -->
-            <set field="expireDate" from="expireMonth + '/' + expireYear"/>
             <!-- Stripe service -->
-            <!-- <entity-make-value entity-name="mantle.account.payment.Payment" value-field="payment"/> -->
-            <log message="-------------------context: ${context}--------------------------"/>
-            <log message="-------------------paymentMethodId: ${paymentMethodId}--------------------------"/>
-            <log message="-------------------paymentId: ${paymentId}--------------------------"/>
             <set field="paymentGatewayConfigId" value="StripeDemo"/>
-            <log message="-------------------paymentGatewayConfigId: ${paymentGatewayConfigId}--------------------------"/>
-            <log message="-------------------stripeGatewayInfoMap: ${stripeGatewayInfoMap}--------------------------"/>
-            <set field="paymentGatewayTypeEnumId" value="PgtTest"/>
-            <log message="-------------------paymentGatewayTypeEnumId: ${paymentGatewayTypeEnumId}--------------------------"/>
+            <log message="-------------------context: ${context}--------------------------"/>
             <service-call name="Stripe.StripePaymentServices.authorizeAndCapture#Payment" in-map="context" out-map="context"/>
-            <!-- <service-call name="Stripe.StripePaymentServices.capture#Payment" in-map="context" out-map="context"/> -->
             <script>
                 println "-------------------create user account-------------------------"
                 println context
