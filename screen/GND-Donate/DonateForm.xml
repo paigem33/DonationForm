@@ -18,30 +18,12 @@
     </transition>
 
     <widgets>
-    <!-- <form-single name="createPerson" transition="createPerson" method="POST">
-    <field name="firstName">
-                <default-field>
-                    <text-line size="30"/>
-                </default-field>
-            </field>
-            <field name="lastName">
-                <default-field>
-                    <text-line size="30"/>
-                </default-field>
-            </field>
-            <field name="emailAddress">
-                <default-field>
-                    <text-line size="30"/>
-                </default-field>
-            </field>
-            <field name="submitButton">
-                <default-field title="Submit">
-                    <submit/>
-                </default-field>
-            </field>
-            </form-single> -->
+        <render-mode><text type="html,vuet" location="component://moqui-org/screen/moqui.org/includes/headerSecondary.html.ftl" no-boundary-comment="true"/></render-mode>
+
          <render-mode>
             <text type="html,vuet" location="component://DonationForm/template/DonateForm.html.ftl"/>
         </render-mode>
+
+        <render-mode><text type="html,vuet" location="component://moqui-org/screen/moqui.org/includes/footerSecondary.html.ftl"/></render-mode>
     </widgets>
 </screen> 
