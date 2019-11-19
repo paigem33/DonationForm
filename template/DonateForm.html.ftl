@@ -7,77 +7,93 @@
 <form action="/apps/DonationForm/DonateForm/createPerson" method="post" id="donateForm">
   <fieldset>
   <legend>Donation Amount</legend>
-      <div class="amount-radios">
-          <input type="radio" name="amount_prefilled" id="rdo-amount-1" value="31" checked="checked"/>
+  <img class="secure-img" src="https://gurunanakdwara.com/img/100-secure.png"/>
+<div class="radios">
+        <div value="31">$31</div>
+        <div value="51">$51</div>
+        <div value="101">$101</div>
+        <div value="251">$251</div>
+        <div value="501">$501</div>
+        <input type="text" name="amount" placeholder="Other amount"/>
+<#--            <input type="radio" name="amount_prefilled" id="rdo-amount-1" value="31" checked="checked"/>
           <label for="rdo-amount-1">$31&nbsp;&nbsp;</label>
-      </div>
-      <div class="amount-radios">
           <input type="radio" name="amount_prefilled" id="rdo-amount-2" value="51"/>
           <label for="rdo-amount-2">$51&nbsp;&nbsp;</label>
-      </div>
-      <div class="amount-radios">
           <input type="radio" name="amount_prefilled" id="rdo-amount-3" value="101"/>
           <label for="rdo-amount-3">$101&nbsp;</label>
-      </div>
-      <div class="amount-radios">
           <input type="radio" name="amount_prefilled" id="rdo-amount-4" value="251"/>
           <label for="rdo-amount-4">$251&nbsp;</label>
-      </div>
-      <div class="amount-radios">
           <input type="radio" name="amount_prefilled" id="rdo-amount-5" value="501"/>
           <label for="rdo-amount-5">$501&nbsp;</label>
-      </div>
-      <div class="amount-radios">
-          <span class="other-radio-and-label">
               <input type="radio" name="amount_prefilled" id="rdo-amount-other" value/>
-              <label for="rdo-amount-other">$</label>
-          </span>
-          <input id="amount" class="other-input input" name="amount" type="tel" size="7" maxlength="7" pattern="\d+(\.\d{2})?" placeholder="other"/>
+          <label for="rdo-amount-other">$</label>
+          <input id="amount" class="other-input input" name="amount" type="tel" size="7" maxlength="7" pattern="\d+(\.\d{2})?" placeholder="other"/>  -->
       </div>
     </fieldset>
     <fieldset>
       <legend>Frequency</legend>
       <div class="frequency">
-        <div>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-5" value="501"/>
-          <label for="rdo-amount-5">One-Time Donation</label>
+        <div id="one-time">
+         One-time donation
         </div>
-        <div>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-5" value="501"/>
-          <label for="rdo-amount-5">Monthly Donation</label>
+
+        <div id="monthly">
+        Monthly donation
         </div>
+
       </div>
     </fieldset>
+
     <fieldset>
     <legend>Contact Information</legend>
-    <div>
+    <div class="contact">
       <#--  Person info  -->
-      
-      <label for="firstName">First Name*</label>
-      <input required type="text" id="firstName" name="firstName" placeholder="First Name" />
-      
-      
-      <label for="middleName">M.I.</label>
-      <input type="text" id="middleName" name="middleName">
-      <label for="lastName">Last Name*</label>
-      <input required type="text" id="lastName" name="lastName"> 
+      <div class="field-75">
+          <label for="firstName">First Name*</label>
+          <input required type="text" id="firstName" name="firstName"/>
+      </div>
 
-      
-      <label for="emailAddress">Email*</label>
-      <input required type="email" id="emailAddress" name="emailAddress" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="example@email.com">
+      <div class="field-25">
+          <label for="middleName">M.I.</label>
+          <input type="text" id="middleName" name="middleName">
+      </div>
 
-      <label for="contactNumber">Phone Number*</label>
-      <input required type="tel" id="contactNumber" name="contactNumber" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" title="123-345-67890">
+      <div>
+          <label for="lastName">Last Name*</label>
+          <input required type="text" id="lastName" name="lastName"> 
+      </div>
 
-      <label for="address1">Residential Address*</label>
-      <input required type="text" id="address1" name="address1">
-      <label for="unitNumber">Apt #</label>
-      <input type="text" id="unitNumber" name="unitNumber">
-      <label for="postalCode">Zip Code*</label>
-      <input required type="text" id="postalCode" name="postalCode" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="12345 or 12345-1234">
-      <label for="city">City*</label>
-      <input required type="text" id="city" name="city">
-      <label for="stateProvinceGeoId">State</label>
+      <div>
+          <label for="emailAddress">Email*</label>
+          <input required type="email" id="emailAddress" name="emailAddress" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="example@email.com">
+      </div>
+
+      <div>
+          <label for="contactNumber">Phone Number*</label>
+          <input required type="tel" id="contactNumber" name="contactNumber" pattern="^[2-9]\d{2}-\d{3}-\d{4}$" title="123-345-67890">
+      </div>
+
+      <div class="field-75">
+          <label for="address1">Residential Address*</label>
+          <input required type="text" id="address1" name="address1">
+      </div>
+
+      <div class="field-25">
+          <label for="unitNumber">Apt #</label>
+          <input type="text" id="unitNumber" name="unitNumber">
+      </div>
+
+      <div class="field-25">
+          <label for="postalCode">Zip Code*</label>
+          <input required type="text" id="postalCode" name="postalCode" pattern="^[0-9]{5}(?:-[0-9]{4})?$" title="12345 or 12345-1234">
+      </div>
+
+      <div class="field-50">
+          <label for="city">City*</label>
+          <input required type="text" id="city" name="city">
+      </div>
+      <div class="field-25">
+      <label for="stateProvinceGeoId">State*</label>
         <select required id="stateProvinceGeoId"  name="stateProvinceGeoId">
           <option class="blank label"></option>
           <option value="USA_AL" class="state">Alabama</option>
@@ -141,6 +157,7 @@
           <option value="USA_AP" class="state">Armed Forces Pacific</option>
           <option value="USA_AE" class="state">Armed Forces Others</option>
         </select>  
+        </div>
     </div>
     </fieldset>
   <#--  Card Info  -->
@@ -148,23 +165,35 @@
   <input required type="text" id="amount" name="amount" pattern="^(\d*\.)?\d+$" title="50.00">  -->
   <fieldset>
   <legend>Card Information</legend>
-  <div>
-  <label for="cardNumber">Card Number*</label>
-  <input required type="text" id="cardNumber" name="cardNumber" pattern="4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11}" title="16 digit card number, no separators"/>
-  <label for="expireMonth">Expire Month*</label>
-  <input required type="text" id="expireMonth" name="expireMonth" pattern="^(0[1-9]|1[012])$" title="Two digit month"/>
-  <label for="expireYear">Expire Year*</label>
-  <input required type="text" id="expireYear" name="expireYear" pattern="^[0-9]{4}$" title="Four digit year"/>
-  <#--  <label for="expireDate">Expiration Date*</label>
-  <input required type="text" id="expireDate" name="expireDate">  -->
-  <label for="cardSecurityCode">Security Code*</label>
-  <input required type="text" id="cardSecurityCode" name="cardSecurityCode" pattern="^[0-9]{3}$" title="Three digit code"/>
-  <button type="submit">Create account</button>
-  </div>
+  <div class="card">
+      <div>
+          <label for="cardNumber">Card Number*</label>
+          <input required type="text" id="cardNumber" name="cardNumber" pattern="4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11}" title="16 digit card number, no separators"/>
+     </div>
+     <div class="field-33">
+      <label for="expireMonth">Expire Month*</label>
+      <input required type="text" id="expireMonth" name="expireMonth" pattern="^(0[1-9]|1[012])$" title="Two digit month" placeholder="Example: 04"/>
+    </div>
+    <div class="field-33">
+      <label for="expireYear">Expire Year*</label>
+      <input required type="text" id="expireYear" name="expireYear" pattern="^[0-9]{4}$" title="Four digit year" placeholder="Example: 2020"/>
+    </div>
+    <div class="field-33">
+      <#--  <label for="expireDate">Expiration Date*</label>
+      <input required type="text" id="expireDate" name="expireDate">  -->
+      <label for="cardSecurityCode">Security Code*</label>
+      <input required type="text" id="cardSecurityCode" name="cardSecurityCode" pattern="^[0-9]{3}$" title="Three digit code" placeholder="Example: 123"/>
+    </div>
+    </div>
+  <button type="submit">Submit donation</button>
+  
   </fieldset>
   </form> 
 </div>
 
+<footer class="footerSecondary">
+    <p>Guru Nanak Dwara is a tax-exempt 501c(3) non-profit charitable organization. Every generous donation is tax deductible in the USA.</p>
+</footer>
 
 </div>
 
