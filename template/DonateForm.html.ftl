@@ -9,12 +9,12 @@
   <legend>Donation Amount</legend>
   <img class="secure-img" src="https://gurunanakdwara.com/img/100-secure.png"/>
 <div class="radios">
-        <div value="31">$31</div>
-        <div value="51">$51</div>
-        <div value="101">$101</div>
-        <div value="251">$251</div>
-        <div value="501">$501</div>
-        <input type="text" name="amount" placeholder="Other amount"/>
+       <input class="amount-radios active-amount" value="31" name="amount" READONLY>
+        <input class="amount-radios" value="51" READONLY>
+        <input class="amount-radios" value="101" READONLY>
+        <input class="amount-radios" value="251" READONLY>
+        <input class="amount-radios" value="501" READONLY>
+        <input class="amount-radios other-amount" type="text" placeholder="Other amount" pattern="^[0-9]+(\.[0-9][0-9])?$" title="Please enter a dollar amount, decimals optional"/>
 <#--            <input type="radio" name="amount_prefilled" id="rdo-amount-1" value="31" checked="checked"/>
           <label for="rdo-amount-1">$31&nbsp;&nbsp;</label>
           <input type="radio" name="amount_prefilled" id="rdo-amount-2" value="51"/>
@@ -33,13 +33,10 @@
     <fieldset>
       <legend>Frequency</legend>
       <div class="frequency">
-        <div id="one-time">
-         One-time donation
-        </div>
 
-        <div id="monthly">
-        Monthly donation
-        </div>
+        <input class="active-amount frequency-option" name="frequency" type="text" id="one-time" value="One time" name="frequency" READONLY/>
+
+        <input class="frequency-option" type="text" id="monthly" value="monthly" READONLY/>
 
       </div>
     </fieldset>
@@ -194,6 +191,44 @@
 <footer class="footerSecondary">
     <p>Guru Nanak Dwara is a tax-exempt 501c(3) non-profit charitable organization. Every generous donation is tax deductible in the USA.</p>
 </footer>
+
+<script> 
+
+    $( document ).ready(function() {
+
+        var radio_amounts = $('.amount-radios');
+        var active_amount = $("[name='amount']");
+
+        var frequency_option = $('.frequency-option');
+        var frequency_selected = $("[name='frequency']");
+
+        $(".amount-radios").click(function(){
+            console.log('Clicked! radio');
+            active_amount.removeAttr("name").removeClass("active-amount");
+            $(this).attr("name","amount").addClass("active-amount");
+            active_amount = $(this);
+        })
+
+        $(".frequency-option").click(function(){
+            console.log('Clicked! frequency');
+            frequency_selected.removeAttr("name").removeClass("active-amount");
+            $(this).attr("name","frequency").addClass("active-amount");
+            frequency_selected = $(this);
+        })
+
+    });
+
+
+
+    //let amount_radios = document.getElementsByClassName("amount-radios");
+    //let amount = document.getElementsByName("amount");
+
+    //console.log(amount_radios);
+    //console.log(amount);
+
+
+
+</script>
 
 </div>
 
