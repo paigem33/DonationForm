@@ -18,12 +18,12 @@
     </transition>
 
     <widgets>
+    <!-- TODO: remove this and add header directly into code -->
         <render-mode><text type="html,vuet" location="component://moqui-org/screen/moqui.org/includes/headerSecondary.html.ftl" no-boundary-comment="true"/></render-mode>
 
          <render-mode>
             <text type="html,vuet" location="component://DonationForm/template/DonateForm.html.ftl"/>
         </render-mode>
 
-        <render-mode><text type="html,vuet" location="component://moqui-org/screen/moqui.org/includes/footerSecondary.html.ftl"/></render-mode>
     </widgets>
 </screen> 

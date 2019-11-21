@@ -20,6 +20,8 @@
             <parameter name="expireMonth" required="true"/>
             <parameter name="expireYear" required="true"/>
             <parameter name="cardSecurityCode" required="true"/>
+            <!-- frequency -->
+            <parameter name="frequency"/>
         </in-parameters>
 
         <out-parameters>
@@ -44,6 +46,12 @@
             <set field="paymentGatewayConfigId" value="StripeDemo"/>
             <log message="-------------------context: ${context}--------------------------"/>
             <service-call name="Stripe.StripePaymentServices.authorizeAndCapture#Payment" in-map="context" out-map="context"/>
+            <if condition="frequency">
+                <!-- TODO: figure out currect way to make a subscription -->
+                <!-- Only runs if we are creating a subscription, this is where we will put the service to create a subscription -->
+                <!-- orderItem has a subscription ID -->
+                <!-- There is a product.subscription entity -->
+            </if>
             <script>
                 println "-------------------create user account-------------------------"
                 println context

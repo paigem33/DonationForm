@@ -9,34 +9,22 @@
   <legend>Donation Amount</legend>
   <img class="secure-img" src="https://gurunanakdwara.com/img/100-secure.png"/>
 <div class="radios">
+<#--  TODO: figure out how to add in dollar signs, maybe with ::before or ::after, or remove it from the value in the services  -->
        <input class="amount-radios active-amount" value="31" name="amount" READONLY>
         <input class="amount-radios" value="51" READONLY>
         <input class="amount-radios" value="101" READONLY>
         <input class="amount-radios" value="251" READONLY>
         <input class="amount-radios" value="501" READONLY>
         <input class="amount-radios other-amount" type="text" placeholder="Other amount" pattern="^[0-9]+(\.[0-9][0-9])?$" title="Please enter a dollar amount, decimals optional"/>
-<#--            <input type="radio" name="amount_prefilled" id="rdo-amount-1" value="31" checked="checked"/>
-          <label for="rdo-amount-1">$31&nbsp;&nbsp;</label>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-2" value="51"/>
-          <label for="rdo-amount-2">$51&nbsp;&nbsp;</label>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-3" value="101"/>
-          <label for="rdo-amount-3">$101&nbsp;</label>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-4" value="251"/>
-          <label for="rdo-amount-4">$251&nbsp;</label>
-          <input type="radio" name="amount_prefilled" id="rdo-amount-5" value="501"/>
-          <label for="rdo-amount-5">$501&nbsp;</label>
-              <input type="radio" name="amount_prefilled" id="rdo-amount-other" value/>
-          <label for="rdo-amount-other">$</label>
-          <input id="amount" class="other-input input" name="amount" type="tel" size="7" maxlength="7" pattern="\d+(\.\d{2})?" placeholder="other"/>  -->
       </div>
     </fieldset>
     <fieldset>
       <legend>Frequency</legend>
       <div class="frequency">
 
-        <input class="active-amount frequency-option" name="frequency" type="text" id="one-time" value="One time" name="frequency" READONLY/>
+        <input id="oneTime" class="active-amount frequency-option" type="text" id="one-time" value="One time" READONLY/>
 
-        <input class="frequency-option" type="text" id="monthly" value="monthly" READONLY/>
+        <input id="monthly" class="frequency-option" type="text" id="monthly" value="monthly" READONLY/>
 
       </div>
     </fieldset>
@@ -157,9 +145,6 @@
         </div>
     </div>
     </fieldset>
-  <#--  Card Info  -->
-  <#--  <label for="amount">Amount*</label>
-  <input required type="text" id="amount" name="amount" pattern="^(\d*\.)?\d+$" title="50.00">  -->
   <fieldset>
   <legend>Card Information</legend>
   <div class="card">
@@ -176,8 +161,6 @@
       <input required type="text" id="expireYear" name="expireYear" pattern="^[0-9]{4}$" title="Four digit year" placeholder="Example: 2020"/>
     </div>
     <div class="field-33">
-      <#--  <label for="expireDate">Expiration Date*</label>
-      <input required type="text" id="expireDate" name="expireDate">  -->
       <label for="cardSecurityCode">Security Code*</label>
       <input required type="text" id="cardSecurityCode" name="cardSecurityCode" pattern="^[0-9]{3}$" title="Three digit code" placeholder="Example: 123"/>
     </div>
@@ -193,14 +176,14 @@
 </footer>
 
 <script> 
-
     $( document ).ready(function() {
 
         var radio_amounts = $('.amount-radios');
         var active_amount = $("[name='amount']");
 
-        var frequency_option = $('.frequency-option');
-        var frequency_selected = $("[name='frequency']");
+        var oneTime = $('#one-time');
+        var monthly = $('#monthly');
+
 
         $(".amount-radios").click(function(){
             console.log('Clicked! radio');
@@ -209,25 +192,19 @@
             active_amount = $(this);
         })
 
-        $(".frequency-option").click(function(){
-            console.log('Clicked! frequency');
-            frequency_selected.removeAttr("name").removeClass("active-amount");
-            $(this).attr("name","frequency").addClass("active-amount");
-            frequency_selected = $(this);
+        oneTime.click(function(){
+          console.log('Clicked! one time');
+          $(this).addClass("active-amount");
+          monthly.removeClass("active-amount").removeAttr("name");
+        })
+
+        monthly.click(function(){
+          console.log('Clicked! monthly');
+          $(this).addClass("active-amount").attr("name","frequency");
+          oneTime.removeClass("active-amount");
+        })
+
         })
-
-    });
-
-
-
-    //let amount_radios = document.getElementsByClassName("amount-radios");
-    //let amount = document.getElementsByName("amount");
-
-    //console.log(amount_radios);
-    //console.log(amount);
-
-
-
 </script>
 
 </div>
