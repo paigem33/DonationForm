@@ -46,11 +46,17 @@
             <set field="paymentGatewayConfigId" value="StripeDemo"/>
             <log message="-------------------context: ${context}--------------------------"/>
             <service-call name="Stripe.StripePaymentServices.authorizeAndCapture#Payment" in-map="context" out-map="context"/>
+            <!-- <set field="orderId" from="orderContentId"/> -->
+            <!-- Creates an orderHeader and one orderPart -->
+            <set field="grandTotal" from="amount"/>
+            <service-call name="mantle.order.OrderServices.create#Order" in-map="context" out-map="context"/>
+            <set field="subscriptionId" from="orderId"/>
+            <service-call name="mantle.order.OrderServices.create#OrderItem" in-map="context" out-map="context"/>
+            <log message="-------------------orderContentID: ${orderContentId}--------------------------"/>
             <if condition="frequency">
                 <!-- TODO: figure out currect way to make a subscription -->
                 <!-- Only runs if we are creating a subscription, this is where we will put the service to create a subscription -->
                 <!-- orderItem has a subscription ID -->
-                <!-- There is a product.subscription entity -->
             </if>
             <script>
                 println "-------------------create user account-------------------------"
